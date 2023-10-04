@@ -2,6 +2,8 @@
     --background: #000000;
     --image: #eeeeee;
     --light: #0000cd;
+    --evil: red;
+    --good: #0000cd;
 }
 
 body {
@@ -55,7 +57,40 @@ header {
 }
 .conteiner div:hover{
     box-shadow: 0px 0px 20px 5px var(--light);
+}
+.tic,
+.tac{
+    position: relative;
+}
+.tic::after,
+.tic::before{ 
+    content: "";
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    width: 150px;
+    height: 10px;
+    background-color: var(--good);
+    box-shadow: 0px 0px 20px 5px var(--good);
+}
+.tic::after{ 
+    transform: rotate(45deg);
+}
+.tic::before{ 
+    transform: rotate(-45deg);
+}
 
+.tac::after{ 
+    content: "";
+    box-shadow: 0px 0px 20px 5px var(--evil);
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    border: 10px solid var(--evil);
+    border-radius: 50%;
+    min-width: 100px;
+    height: 100px;
+    z-index: -10;
 }
 footer {
     display: flex;
