@@ -1,0 +1,60 @@
+:root {
+    --background: #000000;
+    --image: #eeeeee;
+    --light: #0000cd;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0 auto;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background);
+    color: var(--image);
+    overflow-x: hidden;
+}
+
+svg {
+    fill: var(--image);
+    cursor: pointer;
+}
+
+header,
+footer,
+main{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--light);
+}
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--light);
+}
+
+.rsschool,
+.github {
+    width: 5rem;
+}
+
+.image_github {
+    width: 3rem;
+    height: 3rem;
+    background-size: 100% 100%;
+}
+
+.rsschool:hover,
+.image_github:hover,
+.orientation div:hover{
+    opacity: 0.75;
+}
