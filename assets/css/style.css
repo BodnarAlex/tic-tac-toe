@@ -4,6 +4,7 @@
     --light: #0000cd;
     --evil: red;
     --good: #0000cd;
+    --gamer: red;
 }
 
 body {
@@ -25,7 +26,7 @@ svg {
 
 header,
 footer,
-main{
+main {
     box-sizing: border-box;
     width: 100%;
     padding: 20px 50px;
@@ -36,34 +37,44 @@ header {
     border-bottom: 1px solid var(--light);
 }
 
-
-.content{
+.content {
     width: 500px;
     height: 500px;
     border: 1px solid var(--light);
     margin: 0 auto;
 }
-.conteiner{
+
+.conteiner {
     width: 100%;
     height: 100%;
-    display: flex; 
+    display: flex;
     flex-flow: row wrap;
     justify-content: start;
 }
 
-.conteiner div{
+.conteiner div {
     border: 1px solid var(--light);
     width: 32.9%;
+    cursor: pointer;
 }
-.conteiner div:hover{
-    box-shadow: 0px 0px 20px 5px var(--light);
+
+.conteiner div:hover {
+    box-shadow: 0px 0px 20px 5px var(--gamer);
 }
+
+.conteiner div.tic:hover,
+.conteiner div.tac:hover {
+    box-shadow: none;
+    cursor: auto;
+}
+
 .tic,
-.tac{
+.tac {
     position: relative;
 }
+
 .tic::after,
-.tic::before{ 
+.tic::before {
     content: "";
     position: absolute;
     top: 75px;
@@ -73,14 +84,16 @@ header {
     background-color: var(--good);
     box-shadow: 0px 0px 20px 5px var(--good);
 }
-.tic::after{ 
+
+.tic::after {
     transform: rotate(45deg);
 }
-.tic::before{ 
+
+.tic::before {
     transform: rotate(-45deg);
 }
 
-.tac::after{ 
+.tac::after {
     content: "";
     box-shadow: 0px 0px 20px 5px var(--evil);
     position: absolute;
@@ -92,6 +105,7 @@ header {
     height: 100px;
     z-index: -10;
 }
+
 footer {
     display: flex;
     flex-flow: row nowrap;
@@ -113,6 +127,6 @@ footer {
 
 .rsschool:hover,
 .image_github:hover,
-.orientation div:hover{
+.orientation div:hover {
     opacity: 0.75;
 }
