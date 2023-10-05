@@ -5,6 +5,7 @@
     --evil: red;
     --good: #0000cd;
     --gamer: red;
+    --none: grey;
 }
 
 body {
@@ -103,9 +104,7 @@ header {
     border-radius: 50%;
     min-width: 100px;
     height: 100px;
-    z-index: -10;
 }
-
 
 .common{
     display: flex;
@@ -116,11 +115,52 @@ header {
 .common div{
     width: 30%;
     text-align: center;
+    height: 40px;
 }
 #restart{
     border: 1px solid white;
-    box-shadow: 0px 0px 20px 5px white;
-    padding: 10px 5px;
+    padding: 10px 5px 0;
+    height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#restart:hover{
+    box-shadow: 0px 0px 10px 2px white;
+}
+.common_tic,
+.common_tac{
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.common_tic .tic::after,
+.common_tic .tic::before{
+    width: 40px;
+    height: 5px;
+    top: 17px;
+    box-shadow: none;
+    background-color: var(--none);
+
+}
+.common_tac .tac::after{
+    min-width: 30px;
+    height: 30px;
+    top: 2px;
+    margin-left: -25px;
+    border: 3px solid var(--none);
+    box-shadow: none;
+}
+
+.common_tic .tic.win::after,
+.common_tic .tic.win::before{
+    box-shadow: 0px 0px 20px 5px var(--good);
+    background-color: var(--good);
+}
+.common_tac .tac.win::after{
+    box-shadow: 0px 0px 20px 5px var(--evil);
+    border: 3px solid var(--evil);
+
 }
 footer {
     display: flex;
