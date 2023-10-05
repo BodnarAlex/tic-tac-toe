@@ -132,32 +132,44 @@ header {
     height: 40px;
     display: flex;
     justify-content: space-between;
-
+    position: relative;
 }
-.common_tic .tic::after,
-.common_tic .tic::before{
+.common_tic .tics::after,
+.common_tic .tics::before{
+    content: "";
+    position: absolute;
     width: 40px;
     height: 5px;
     top: 17px;
+    margin-left: -10px;
     box-shadow: none;
     background-color: var(--none);
-
 }
-.common_tac .tac::after{
+.tics::after {
+    transform: rotate(45deg);
+}
+
+.tics::before {
+    transform: rotate(-45deg);
+}
+.common_tac .tacs::after{
+    content: "";
+    position: absolute;
     min-width: 30px;
     height: 30px;
     top: 2px;
     margin-left: -25px;
     border: 3px solid var(--none);
     box-shadow: none;
+    border-radius: 50%;
 }
 
-.common_tic .tic.win::after,
-.common_tic .tic.win::before{
+.common_tic .tics.win::after,
+.common_tic .tics.win::before{
     box-shadow: 0px 0px 20px 5px var(--good);
     background-color: var(--good);
 }
-.common_tac .tac.win::after{
+.common_tac .tacs.win::after{
     box-shadow: 0px 0px 20px 5px var(--evil);
     border: 3px solid var(--evil);
 
