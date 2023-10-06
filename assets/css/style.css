@@ -1,0 +1,209 @@
+:root {
+    --background: #000000;
+    --image: #eeeeee;
+    --light: #0000cd;
+    --evil: red;
+    --good: #0000cd;
+    --gamer: red;
+    --none: grey;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0 auto;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background);
+    color: var(--image);
+    overflow-x: hidden;
+}
+
+svg {
+    fill: var(--image);
+    cursor: pointer;
+}
+
+header,
+footer,
+main {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--light);
+}
+
+.content {
+    width: 500px;
+    height: 500px;
+    border: 1px solid var(--light);
+    margin: 0 auto;
+}
+
+.conteiner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+}
+
+.conteiner div {
+    border: 1px solid var(--light);
+    width: 32.9%;
+    cursor: pointer;
+}
+
+.conteiner div:hover {
+    box-shadow: 0px 0px 20px 5px var(--gamer);
+}
+
+.conteiner div.tic:hover,
+.conteiner div.tac:hover {
+    box-shadow: none;
+    cursor: auto;
+}
+
+.tic,
+.tac {
+    position: relative;
+}
+
+.tic::after,
+.tic::before {
+    content: "";
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    width: 150px;
+    height: 10px;
+    background-color: var(--good);
+    box-shadow: 0px 0px 20px 5px var(--good);
+}
+
+.tic::after {
+    transform: rotate(45deg);
+}
+
+.tic::before {
+    transform: rotate(-45deg);
+}
+
+.tac::after {
+    content: "";
+    box-shadow: 0px 0px 20px 5px var(--evil);
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    border: 10px solid var(--evil);
+    border-radius: 50%;
+    min-width: 100px;
+    height: 100px;
+}
+
+.common {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.common div {
+    width: 30%;
+    text-align: center;
+    height: 40px;
+}
+
+#restart {
+    border: 1px solid white;
+    padding: 10px 5px 0;
+    height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#restart:hover {
+    box-shadow: 0px 0px 10px 2px white;
+}
+
+.common_tic,
+.common_tac {
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.common_tic .tics::after,
+.common_tic .tics::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    top: 17px;
+    margin-left: -10px;
+    box-shadow: none;
+    background-color: var(--none);
+}
+
+.tics::after {
+    transform: rotate(45deg);
+}
+
+.tics::before {
+    transform: rotate(-45deg);
+}
+
+.common_tac .tacs::after {
+    content: "";
+    position: absolute;
+    min-width: 30px;
+    height: 30px;
+    top: 2px;
+    margin-left: -25px;
+    border: 3px solid var(--none);
+    box-shadow: none;
+    border-radius: 50%;
+}
+
+.common_tic .tics.win::after,
+.common_tic .tics.win::before {
+    box-shadow: 0px 0px 20px 5px var(--good);
+    background-color: var(--good);
+}
+
+.common_tac .tacs.win::after {
+    box-shadow: 0px 0px 20px 5px var(--evil);
+    border: 3px solid var(--evil);
+
+}
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--light);
+}
+
+.rsschool,
+.github {
+    width: 5rem;
+}
+
+.image_github {
+    width: 3rem;
+    height: 3rem;
+    background-size: 100% 100%;
+}
+
+.rsschool:hover,
+.image_github:hover,
+.orientation div:hover {
+    opacity: 0.75;
+}
