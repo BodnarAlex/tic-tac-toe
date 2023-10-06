@@ -106,36 +106,41 @@ header {
     height: 100px;
 }
 
-.common{
+.common {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     margin-top: 10px;
 }
-.common div{
+
+.common div {
     width: 30%;
     text-align: center;
     height: 40px;
 }
-#restart{
+
+#restart {
     border: 1px solid white;
     padding: 10px 5px 0;
     height: 40px;
     box-sizing: border-box;
     cursor: pointer;
 }
-#restart:hover{
+
+#restart:hover {
     box-shadow: 0px 0px 10px 2px white;
 }
+
 .common_tic,
-.common_tac{
+.common_tac {
     height: 40px;
     display: flex;
     justify-content: space-between;
     position: relative;
 }
+
 .common_tic .tics::after,
-.common_tic .tics::before{
+.common_tic .tics::before {
     content: "";
     position: absolute;
     width: 40px;
@@ -145,6 +150,7 @@ header {
     box-shadow: none;
     background-color: var(--none);
 }
+
 .tics::after {
     transform: rotate(45deg);
 }
@@ -152,7 +158,8 @@ header {
 .tics::before {
     transform: rotate(-45deg);
 }
-.common_tac .tacs::after{
+
+.common_tac .tacs::after {
     content: "";
     position: absolute;
     min-width: 30px;
@@ -165,15 +172,17 @@ header {
 }
 
 .common_tic .tics.win::after,
-.common_tic .tics.win::before{
+.common_tic .tics.win::before {
     box-shadow: 0px 0px 20px 5px var(--good);
     background-color: var(--good);
 }
-.common_tac .tacs.win::after{
+
+.common_tac .tacs.win::after {
     box-shadow: 0px 0px 20px 5px var(--evil);
     border: 3px solid var(--evil);
 
 }
+
 footer {
     display: flex;
     flex-flow: row nowrap;
