@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
     for (var i = 0; i < click.length; i++) {
         click[i].onclick = function (e) {
             let elem = e.target.classList;
+            console.log(tic);
             if (!elem.contains('tic') && !elem.contains('tac') && win == '') {
                 if(tic){
                     elem.add('tic');
@@ -49,16 +50,18 @@ window.addEventListener('load', () => {
     }
 
     document.getElementById('restart').onclick = function () {
-        var tic = document.querySelectorAll('.tic');
-        for (var i = 0; i < tic.length; i++) {
-            tic[i].classList.remove('tic');
+        var allTic = document.querySelectorAll('.tic');
+        for (var i = 0; i < allTic.length; i++) {
+            allTic[i].classList.remove('tic');
         }
-        var tac = document.querySelectorAll('.tac');
-        for (var i = 0; i < tac.length; i++) {
-            tac[i].classList.remove('tac');
+        var allTac = document.querySelectorAll('.tac');
+        for (var i = 0; i < allTac.length; i++) {
+            allTac[i].classList.remove('tac');
         }
         game = [];
         win = '';
+        tic = true;
+        document.documentElement.style.setProperty('--gamer', '#0000cd');
         unblockConteiner();
     }
 });
