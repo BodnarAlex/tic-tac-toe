@@ -4,7 +4,7 @@
     --light: #0000cd;
     --evil: red;
     --good: #0000cd;
-    --gamer: red;
+    --gamer: #0000cd;
     --none: grey;
 }
 
@@ -64,7 +64,8 @@ header {
 }
 
 .conteiner div.tic:hover,
-.conteiner div.tac:hover {
+.conteiner div.tac:hover,
+.conteiner div.block:hover{
     box-shadow: none;
     cursor: auto;
 }
