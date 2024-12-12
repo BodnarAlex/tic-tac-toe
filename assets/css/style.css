@@ -45,7 +45,7 @@ header {
     margin: 0 auto;
 }
 
-.conteiner {
+.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -53,19 +53,19 @@ header {
     justify-content: start;
 }
 
-.conteiner div {
+.container div {
     border: 1px solid var(--light);
     width: 32.9%;
     cursor: pointer;
 }
 
-.conteiner div:hover {
+.container div:hover {
     box-shadow: 0px 0px 20px 5px var(--gamer);
 }
 
-.conteiner div.tic:hover,
-.conteiner div.tac:hover,
-.conteiner div.block:hover{
+.container div.tic:hover,
+.container div.tac:hover,
+.container div.block:hover{
     box-shadow: none;
     cursor: auto;
 }
@@ -120,7 +120,7 @@ header {
     height: 40px;
 }
 
-#restart {
+.button {
     border: 1px solid white;
     padding: 10px 5px 0;
     height: 40px;
@@ -128,20 +128,20 @@ header {
     cursor: pointer;
 }
 
-#restart:hover {
+.button:hover {
     box-shadow: 0px 0px 10px 2px white;
 }
 
-.common_tic,
-.common_tac {
+.common_tic_wins,
+.common_tac_wins {
     height: 40px;
     display: flex;
     justify-content: space-between;
     position: relative;
 }
 
-.common_tic .tics::after,
-.common_tic .tics::before {
+.common_tic_wins .tic_win::after,
+.common_tic_wins .tic_win::before {
     content: "";
     position: absolute;
     width: 40px;
@@ -152,15 +152,15 @@ header {
     background-color: var(--none);
 }
 
-.tics::after {
+.tic_win::after {
     transform: rotate(45deg);
 }
 
-.tics::before {
+.tic_win::before {
     transform: rotate(-45deg);
 }
 
-.common_tac .tacs::after {
+.common_tac_wins .tac_win::after {
     content: "";
     position: absolute;
     min-width: 30px;
@@ -172,13 +172,13 @@ header {
     border-radius: 50%;
 }
 
-.common_tic .tics.win::after,
-.common_tic .tics.win::before {
+.common_tic_wins .tic_win.win::after,
+.common_tic_wins .tic_win.win::before {
     box-shadow: 0px 0px 20px 5px var(--good);
     background-color: var(--good);
 }
 
-.common_tac .tacs.win::after {
+.common_tac_wins .tac_win.win::after {
     box-shadow: 0px 0px 20px 5px var(--evil);
     border: 3px solid var(--evil);
 
@@ -207,4 +207,26 @@ footer {
 .image_github:hover,
 .orientation div:hover {
     opacity: 0.75;
+}
+
+#custom-modal{
+    position: fixed;
+    top:  calc(50% - 80px);
+    height: 160px;
+    box-shadow: 0px 0px 20px 5px var(--image);
+    width: 300px;
+    background: #1d1d1d;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 100;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#custom-modal button{
+    width: 100px;
+    padding: 5px 5px 0;
 }
