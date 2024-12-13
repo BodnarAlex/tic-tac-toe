@@ -1,3 +1,4 @@
+const COUNT_CELLS = 9;
 let tic = true;
 let winTac = 0;
 let winTic = 0;
@@ -16,7 +17,7 @@ let gameCombinations = [
 
 document.addEventListener("DOMContentLoaded", function () {
     const gameBoard = document.getElementById("game-board");
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= COUNT_CELLS; i++) {
         const cell = document.createElement("div");
         cell.classList.add("item");
         cell.id = i;
@@ -66,7 +67,7 @@ function clickBlock(e) {
             writeWin('X', '.tic_win', winTic);
         else if (checkWin('0'))
             writeWin('O', '.tac_win', winTac)
-        else if (!game.includes(undefined))
+        else if (game.filter(x => x !== undefined).length === game.length && game.length == COUNT_CELLS)
             showModal(`No winner`);
         tic = !tic;
     }
